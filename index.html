@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<script src="karva-motion-shim.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karva — Indian &amp; Thai, Little Elm, Texas</title>
+<meta name="description" content="Karva is an Indian restaurant with a second Thai kitchen at 211 E Eldorado Pkwy #100, Little Elm, Texas. Lunch 11 am – 2 pm, dinner 5 – 11 pm, every day. Call (214) 618-0078 to reserve.">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  /* before first paint: mark JS and apply the remembered Motion choice, so nothing flashes */
+  (function (d) {
+    var h = d.documentElement, m = null;
+    h.className = h.className.replace('no-js', 'js');
+    try { m = localStorage.getItem('karva-motion'); } catch (e) {}
+    var os = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    h.setAttribute('data-motion', m === 'on' ? 'on' : m === 'off' ? 'off' : (os ? 'off' : 'on'));
+  })(document);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="module" src="js/main.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Karva",
+  "servesCuisine": ["Indian", "Thai"],
+  "telephone": "+1-214-618-0078",
+  "email": "support@karvatx.com",
+  "address": { "@type": "PostalAddress", "streetAddress": "211 E Eldorado Pkwy #100", "addressLocality": "Little Elm", "addressRegion": "TX", "postalCode": "75068", "addressCountry": "US" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:00", "closes": "23:00" }
+  ],
+  "acceptsReservations": "By phone"
+}
+</script>
+</head>
+<body>
+
+<!-- Shared drawings. The pot profile is the finished karva traced from the renderer's own curve. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="pot-body" d="M100 204L144.4 204L149.9 200.9L155.3 197.8L160.1 194.6L164.5 191.5L168.7 188.4L172.7 185.3L176.2 182.1L179.2 179L181.6 175.9L183.8 172.8L185.9 169.6L187.9 166.5L189.6 163.4L191.1 160.3L192.5 157.1L193.6 154L194.6 150.9L195.6 147.8L196.5 144.6L197.4 141.5L198.1 138.4L198.6 135.3L198.9 132.1L199 129L198.9 125.9L198.7 122.8L198.4 119.6L198 116.5L197.6 113.4L197.1 110.3L196.6 107.1L196 104L195.1 100.9L193.9 97.8L192.5 94.6L190.8 91.5L189.1 88.4L187.2 85.3L185.1 82.1L182.6 79L179.7 75.9L176.4 72.8L172.9 69.6L169.3 66.5L165.7 63.4L161.5 60.3L156.8 57.1L152 54L147.5 50.9L143.6 47.8L140.3 44.6L136.8 41.5L133.7 38.4L131.5 35.3L130.6 32.1L130.7 29L131.1 25.9L131.6 22.8L132.2 19.6L133.1 16.5L134.9 13.4L137.3 10.3L140 7.1L142.4 4L57.6 4L60 7.1L62.7 10.3L65.1 13.4L66.9 16.5L67.8 19.6L68.4 22.8L68.9 25.9L69.3 29L69.4 32.1L68.5 35.3L66.3 38.4L63.2 41.5L59.7 44.6L56.4 47.8L52.5 50.9L48 54L43.2 57.1L38.5 60.3L34.3 63.4L30.7 66.5L27.1 69.6L23.6 72.8L20.3 75.9L17.4 79L14.9 82.1L12.8 85.3L10.9 88.4L9.2 91.5L7.5 94.6L6.1 97.8L4.9 100.9L4 104L3.4 107.1L2.9 110.3L2.4 113.4L2 116.5L1.6 119.6L1.3 122.8L1.1 125.9L1 129L1.1 132.1L1.4 135.3L1.9 138.4L2.6 141.5L3.5 144.6L4.4 147.8L5.4 150.9L6.4 154L7.5 157.1L8.9 160.3L10.4 163.4L12.1 166.5L14.1 169.6L16.2 172.8L18.4 175.9L20.8 179L23.8 182.1L27.3 185.3L31.3 188.4L35.5 191.5L39.9 194.6L44.7 197.8L50.1 200.9L55.6 204Z"/>
+    <symbol id="glyph" viewBox="-4 -10 208 218">
+      <use href="#pot-body" fill="currentColor"/>
+      <ellipse cx="100" cy="4" rx="42.4" ry="9" fill="currentColor"/>
+      <ellipse cx="100" cy="4" rx="30" ry="5.6" fill="#000" opacity=".55"/>
+    </symbol>
+    <linearGradient id="terra-x" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#5a2412"/><stop offset=".22" stop-color="#c9673a"/><stop offset=".38" stop-color="#e48a55"/>
+      <stop offset=".62" stop-color="#9c4421"/><stop offset=".9" stop-color="#3a160a"/><stop offset="1" stop-color="#6b2d15"/>
+    </linearGradient>
+    <linearGradient id="celadon-x" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#2c4a3a"/><stop offset=".28" stop-color="#8fb39a"/><stop offset=".4" stop-color="#b9d4be"/>
+      <stop offset=".66" stop-color="#5d8a70"/><stop offset="1" stop-color="#1f3529"/>
+    </linearGradient>
+    <linearGradient id="shade-y" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/>
+    </linearGradient>
+    <radialGradient id="floor-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffd6a0" stop-opacity=".32"/><stop offset=".45" stop-color="#ffb46e" stop-opacity=".1"/><stop offset="1" stop-color="#ffb46e" stop-opacity="0"/>
+    </radialGradient>
+    <symbol id="pot-terra" viewBox="-60 -14 320 262">
+      <ellipse cx="100" cy="206" rx="150" ry="34" fill="url(#floor-glow)"/>
+      <ellipse cx="100" cy="206" rx="70" ry="9" fill="#000" opacity=".7"/>
+      <use href="#pot-body" fill="url(#terra-x)"/>
+      <use href="#pot-body" fill="url(#shade-y)"/>
+      <ellipse cx="100" cy="4" rx="42.4" ry="8.5" fill="#b9663c"/>
+      <ellipse cx="100" cy="4.6" rx="36" ry="6.4" fill="#1a0a04"/>
+    </symbol>
+    <symbol id="pot-celadon" viewBox="-60 -14 320 262">
+      <ellipse cx="100" cy="206" rx="70" ry="9" fill="#000" opacity=".35"/>
+      <use href="#pot-body" fill="url(#celadon-x)"/>
+      <use href="#pot-body" fill="url(#shade-y)"/>
+      <ellipse cx="100" cy="4" rx="42.4" ry="8.5" fill="#9cbfa6"/>
+      <ellipse cx="100" cy="4.6" rx="36" ry="6.4" fill="#10201a"/>
+    </symbol>
+    <symbol id="chev" viewBox="0 0 8 14"><path d="M1.2 1.2 6.6 7l-5.4 5.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- 0 · Global nav -->
+<header class="nav" id="top">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Karva, back to top">
+      <svg class="nav__glyph" width="16" height="17" aria-hidden="true"><use href="#glyph"/></svg>
+      <span>Karva</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#menu">Menu</a>
+      <a href="#highlights">Chaat</a>
+      <a href="#gatherings">Gatherings</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="nav__end">
+      <p class="status" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>11–2 · 5–11</span></p>
+      <a class="nav__dir" href="https://www.google.com/maps/search/?api=1&amp;query=211+E+Eldorado+Pkwy+%23100%2C+Little+Elm%2C+TX+75068" rel="noopener" target="_blank">Directions</a>
+      <a class="nav__tel" href="tel:+12146180078">(214) 618-0078</a>
+      <a class="pill pill--sm" href="tel:+12146180078" aria-label="Reserve by phone: (214) 618-0078">Reserve</a>
+    </div>
+  </div>
+</header>
+
+<button class="motion-pill" type="button" data-motion-toggle hidden aria-pressed="false">
+  <span class="motion-pill__icon" aria-hidden="true"></span>Motion <b data-motion-state>On</b>
+</button>
+
+<main id="main">
+
+  <!-- 1 · Hero -->
+  <section class="hero dark" aria-labelledby="hero-title">
+    <div class="wrap hero__copy">
+      <p class="eyebrow" data-rise>Karva · Little Elm, Texas</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="ln" data-line>Slow food.</span>
+        <span class="ln grad" data-line>Two kitchens.</span>
+      </h1>
+      <div class="ctas" data-rise>
+        <a class="pill" href="tel:+12146180078">Reserve a table</a>
+        <a class="more" href="#menu">See the menu<svg width="7" height="12" aria-hidden="true"><use href="#chev"/></svg></a>
+      </div>
+    </div>
+    <div class="hero__stage" data-pot="hero">
+      <svg class="pot-fallback" role="img" aria-label="A fired terracotta karva pot"><use href="#pot-terra"/></svg>
+      <canvas class="pot-canvas" aria-hidden="true"></canvas>
+    </div>
+  </section>
+
+  <!-- 2 · The pot film -->
+  <section class="film dark" id="film" aria-label="How a karva is made">
+    <div class="film__pin">
+      <div class="film__pot" data-pot="film">
+        <svg class="pot-fallback" aria-hidden="true"><use href="#pot-terra"/></svg>
+        <canvas class="pot-canvas" aria-hidden="true"></canvas>
+      </div>
+      <div class="film__beats">
+        <div class="beat" data-beat="0">
+          <h2 class="beat__word">Earth.</h2>
+          <p class="beat__cap">A karva is the clay pot Indian kitchens have cooked in for centuries.</p>
+        </div>
+        <div class="beat" data-beat="1">
+          <h2 class="beat__word grad">Fire.</h2>
+          <p class="beat__cap">Thrown by hand, fired until it rings.</p>
+        </div>
+        <div class="beat" data-beat="2">
+          <h2 class="beat__word">Table.</h2>
+          <p class="beat__cap">It stands for patience, warmth and a table meant to be shared.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Highlights -->
+  <section class="highlights light" id="highlights" aria-labelledby="hl-title">
+    <div class="wrap">
+      <h2 class="h2" id="hl-title" data-rise>Get the highlights.</h2>
+    </div>
+    <div class="car" role="region" aria-roledescription="carousel" aria-label="Chaat highlights">
+      <ul class="car__track" id="car-track" tabindex="0" aria-live="off">
+        <li class="slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
+          <div class="slide__text">
+            <p class="slide__dish">Chowpatty Pani Puri Shots</p>
+            <p class="slide__line">Six shots. <span class="grad">One slate.</span></p>
+          </div>
+          <figure class="slide__fig">
+            <img src="assets/img/pani-puri-shots.jpg" srcset="assets/img/pani-puri-shots.jpg 479w, assets/img/pani-puri-shots@2x.jpg 958w" sizes="(max-width: 733px) 58vw, 360px" width="479" height="599" loading="lazy" decoding="async" alt="Chowpatty Pani Puri Shots: puris resting on shot glasses of mint and tamarind water.">
+          </figure>
+        </li>
+        <li class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
+          <div class="slide__text">
+            <p class="slide__dish">Dilli Dil Tikki</p>
+            <p class="slide__line">Two hearts. <span class="grad">One pool of chole.</span></p>
+          </div>
+          <figure class="slide__fig">
+            <img src="assets/img/dilli-dil-tikki.jpg" srcset="assets/img/dilli-dil-tikki.jpg 479w, assets/img/dilli-dil-tikki@2x.jpg 958w" sizes="(max-width: 733px) 58vw, 360px" width="479" height="599" loading="lazy" decoding="async" alt="Dilli Dil Tikki: two heart-shaped potato tikkis over chickpeas, with yoghurt.">
+          </figure>
+        </li>
+        <li class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
+          <div class="slide__text">
+            <p class="slide__dish">Hass &amp; Hing Chaat</p>
+            <p class="slide__line">Avocado <span class="grad">meets hing.</span></p>
+          </div>
+          <figure class="slide__fig">
+            <img src="assets/img/hass-hing-chaat.jpg" srcset="assets/img/hass-hing-chaat.jpg 479w, assets/img/hass-hing-chaat@2x.jpg 958w" sizes="(max-width: 733px) 58vw, 360px" width="479" height="599" loading="lazy" decoding="async" alt="Hass and Hing Chaat: avocado with papdi wafers on a beetroot stroke.">
+          </figure>
+        </li>
+        <li class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
+          <div class="slide__text">
+            <p class="slide__dish">Kamal Kakkdi Chaat</p>
+            <p class="slide__line">Lotus, <span class="grad">crisped.</span></p>
+          </div>
+          <figure class="slide__fig">
+            <img src="assets/img/kamal-kakkdi-chaat.jpg" srcset="assets/img/kamal-kakkdi-chaat.jpg 479w, assets/img/kamal-kakkdi-chaat@2x.jpg 958w" sizes="(max-width: 733px) 58vw, 360px" width="479" height="599" loading="lazy" decoding="async" alt="Kamal Kakkdi Chaat: crisp lotus stem piled across three chutney strokes.">
+          </figure>
+        </li>
+        <li class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
+          <div class="slide__text">
+            <p class="slide__dish">Juhu Beach Bhel</p>
+            <p class="slide__line">A tower of <span class="grad">Juhu Beach.</span></p>
+          </div>
+          <figure class="slide__fig">
+            <img src="assets/img/juhu-bhel.jpg" srcset="assets/img/juhu-bhel.jpg 479w, assets/img/juhu-bhel@2x.jpg 958w" sizes="(max-width: 733px) 58vw, 360px" width="479" height="599" loading="lazy" decoding="async" alt="Juhu Beach Bhel: a tall stack of puffed rice and sev with a papdi shard.">
+          </figure>
+        </li>
+        <li class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
+          <div class="slide__text">
+            <p class="slide__dish">Panchmel Dal Mathri</p>
+            <p class="slide__line">Five lentils. <span class="grad">Five mathri.</span></p>
+          </div>
+          <figure class="slide__fig">
+            <img src="assets/img/panchmel-dal-mathri.jpg" srcset="assets/img/panchmel-dal-mathri.jpg 479w, assets/img/panchmel-dal-mathri@2x.jpg 958w" sizes="(max-width: 733px) 58vw, 360px" width="479" height="599" loading="lazy" decoding="async" alt="Panchmel Dal Mathri: a small handi of dal with mathri crackers tucked upright.">
+          </figure>
+        </li>
+      </ul>
+      <div class="car__ctl" hidden>
+        <div class="car__dots" role="group" aria-label="Choose a highlight">
+          <button type="button" class="dot" aria-label="Highlight 1 of 6"><span></span></button>
+          <button type="button" class="dot" aria-label="Highlight 2 of 6"><span></span></button>
+          <button type="button" class="dot" aria-label="Highlight 3 of 6"><span></span></button>
+          <button type="button" class="dot" aria-label="Highlight 4 of 6"><span></span></button>
+          <button type="button" class="dot" aria-label="Highlight 5 of 6"><span></span></button>
+          <button type="button" class="dot" aria-label="Highlight 6 of 6"><span></span></button>
+        </div>
+        <button type="button" class="car__play" aria-label="Pause highlights" data-state="playing">
+          <svg class="i-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"/><rect x="7.4" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"/></svg>
+          <svg class="i-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.8v8.4c0 .6.6 1 1.1.7l6.6-4.2c.5-.3.5-1 0-1.3L4.1 1.1C3.6.8 3 1.2 3 1.8z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Take a closer look -->
+  <section class="closer dark" id="closer" aria-labelledby="cl-title">
+    <div class="wrap">
+      <h2 class="h2" id="cl-title" data-rise>Take a closer look.</h2>
+      <div class="closer__grid">
+        <div class="closer__list" role="tablist" aria-label="Chaat" aria-orientation="vertical">
+          <button type="button" role="tab" class="chip" id="cl-t0" aria-controls="cl-stage" aria-selected="true" data-img="pani-puri-shots">
+            <span class="chip__name">Chowpatty Pani Puri Shots</span>
+            <span class="chip__line"><span>Six frosted shot glasses in a line on a matte-black slate.</span></span>
+          </button>
+          <button type="button" role="tab" class="chip" id="cl-t1" aria-controls="cl-stage" aria-selected="false" data-img="dahi-puri">
+            <span class="chip__name">Malai Moti Dahi Puri</span>
+            <span class="chip__line"><span>Six puris in a line on a long white porcelain plate.</span></span>
+          </button>
+          <button type="button" role="tab" class="chip" id="cl-t2" aria-controls="cl-stage" aria-selected="false" data-img="juhu-bhel">
+            <span class="chip__name">Juhu Beach Bhel</span>
+            <span class="chip__line"><span>Packed into a ring mould for a tall, neat stack.</span></span>
+          </button>
+          <button type="button" role="tab" class="chip" id="cl-t3" aria-controls="cl-stage" aria-selected="false" data-img="samosa-chaat">
+            <span class="chip__name">Samosa Shringar Chaat</span>
+            <span class="chip__line"><span>Black stoneware, so the chole shows dark against it.</span></span>
+          </button>
+          <button type="button" role="tab" class="chip" id="cl-t4" aria-controls="cl-stage" aria-selected="false" data-img="mini-raj-kachoori">
+            <span class="chip__name">Mini Raj Kachoori</span>
+            <span class="chip__line"><span>Three mini kachoris in a triangle on a round white plate.</span></span>
+          </button>
+          <button type="button" role="tab" class="chip" id="cl-t5" aria-controls="cl-stage" aria-selected="false" data-img="avocado-dahi-poori">
+            <span class="chip__name">Avocado Dahi Poori</span>
+            <span class="chip__line"><span>Six puris on a long cream plate, two rows of three.</span></span>
+          </button>
+          <button type="button" role="tab" class="chip" id="cl-t6" aria-controls="cl-stage" aria-selected="false" data-img="nachos-paapdi-chaat">
+            <span class="chip__name">Nachos Paapdi Chaat</span>
+            <span class="chip__line"><span>A black cast-iron skillet plate on a wooden board.</span></span>
+          </button>
+          <button type="button" role="tab" class="chip" id="cl-t7" aria-controls="cl-stage" aria-selected="false" data-img="panchmel-dal-mathri">
+            <span class="chip__name">Panchmel Dal Mathri</span>
+            <span class="chip__line"><span>A small brass handi on a wooden board.</span></span>
+          </button>
+        </div>
+        <div class="closer__stage" id="cl-stage" role="tabpanel" aria-labelledby="cl-t0">
+          <div class="closer__photos">
+            <img class="is-on" data-for="pani-puri-shots" src="assets/img/pani-puri-shots.jpg" srcset="assets/img/pani-puri-shots.jpg 479w, assets/img/pani-puri-shots@2x.jpg 958w" sizes="(max-width: 733px) 64vw, 400px" width="479" height="599" loading="lazy" decoding="async" alt="Chowpatty Pani Puri Shots on a long black slate.">
+            <img data-for="dahi-puri" src="assets/img/dahi-puri.jpg" srcset="assets/img/dahi-puri.jpg 479w, assets/img/dahi-puri@2x.jpg 958w" sizes="(max-width: 733px) 64vw, 400px" width="479" height="599" loading="lazy" decoding="async" alt="Malai Moti Dahi Puri: puris crowned with sev and pomegranate.">
+            <img data-for="juhu-bhel" src="assets/img/juhu-bhel.jpg" srcset="assets/img/juhu-bhel.jpg 479w, assets/img/juhu-bhel@2x.jpg 958w" sizes="(max-width: 733px) 64vw, 400px" width="479" height="599" loading="lazy" decoding="async" alt="Juhu Beach Bhel stacked tall on a white plate.">
+            <img data-for="samosa-chaat" src="assets/img/samosa-chaat.jpg" srcset="assets/img/samosa-chaat.jpg 479w, assets/img/samosa-chaat@2x.jpg 958w" sizes="(max-width: 733px) 64vw, 400px" width="479" height="599" loading="lazy" decoding="async" alt="Samosa Shringar Chaat: samosa pieces over dark chole with a swoosh of dahi.">
+            <img data-for="mini-raj-kachoori" src="assets/img/mini-raj-kachoori.jpg" srcset="assets/img/mini-raj-kachoori.jpg 479w, assets/img/mini-raj-kachoori@2x.jpg 958w" sizes="(max-width: 733px) 64vw, 400px" width="479" height="599" loading="lazy" decoding="async" alt="Mini Raj Kachoori: three small kachoris crowned with tamarind foam.">
+            <img data-for="avocado-dahi-poori" src="assets/img/avocado-dahi-poori.jpg" srcset="assets/img/avocado-dahi-poori.jpg 479w, assets/img/avocado-dahi-poori@2x.jpg 958w" sizes="(max-width: 733px) 64vw, 400px" width="479" height="599" loading="lazy" decoding="async" alt="Avocado Dahi Poori: puris with guacamole and sweet curd, topped with curry leaves.">
+            <img data-for="nachos-paapdi-chaat" src="assets/img/nachos-paapdi-chaat.jpg" srcset="assets/img/nachos-paapdi-chaat.jpg 479w, assets/img/nachos-paapdi-chaat@2x.jpg 958w" sizes="(max-width: 733px) 64vw, 400px" width="479" height="599" loading="lazy" decoding="async" alt="Nachos Paapdi Chaat: chips fanned in a skillet with pico de gallo and sev.">
+            <img data-for="panchmel-dal-mathri" src="assets/img/panchmel-dal-mathri.jpg" srcset="assets/img/panchmel-dal-mathri.jpg 479w, assets/img/panchmel-dal-mathri@2x.jpg 958w" sizes="(max-width: 733px) 64vw, 400px" width="479" height="599" loading="lazy" decoding="async" alt="Panchmel Dal Mathri in a small handi with mathri alongside.">
+          </div>
+          <p class="closer__cap" aria-hidden="true">Six frosted shot glasses in a line on a matte-black slate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Bento -->
+  <section class="bento-sec light" aria-labelledby="bento-title">
+    <div class="wrap">
+      <h2 class="h2" id="bento-title" data-rise>Everything, at one table.</h2>
+      <div class="bento">
+        <article class="tile tile--dark b-kitchens">
+          <div class="b-kitchens__pot" data-pot="celadon">
+            <svg class="pot-fallback" aria-hidden="true"><use href="#pot-celadon"/></svg>
+            <canvas class="pot-canvas" aria-hidden="true"></canvas>
+          </div>
+          <div class="b-kitchens__text">
+            <p class="num"><span data-count="2">2</span></p>
+            <p class="tile__label">kitchens.<br><span class="grad">Indian. And Thai.</span></p>
+          </div>
+        </article>
+        <article class="tile tile--white b-chaat">
+          <p class="num"><span data-count="15">15</span></p>
+          <p class="tile__label">signature chaats.</p>
+        </article>
+        <article class="tile tile--black b-guests">
+          <p class="num grad"><span data-count="50">50</span></p>
+          <p class="tile__label">guests in private dining.</p>
+        </article>
+        <article class="tile tile--white b-late">
+          <p class="tile__kicker">Open until</p>
+          <p class="num"><span data-count="11">11</span><small> pm</small></p>
+          <p class="tile__label">Every night.</p>
+        </article>
+        <article class="tile tile--dark b-dress">
+          <p class="num"><span data-count="0" data-from="9">0</span></p>
+          <p class="tile__label">dress codes.</p>
+        </article>
+        <article class="tile tile--grad b-spice">
+          <p class="big">Every spice level.</p>
+          <p class="tile__label">Tell us how hot.</p>
+        </article>
+        <article class="tile tile--white b-veg">
+          <p class="big">Vegetarian on both menus.</p>
+        </article>
+        <article class="tile tile--black b-kids">
+          <p class="big">Kids welcome. <span class="grad">Always.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · Menu -->
+  <section class="menu dark" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <h2 class="h2" id="menu-title" data-rise>The whole menu.</h2>
+      <div class="seg" hidden>
+        <div class="seg__rail" role="tablist" aria-label="Menu chapters">
+        <button type="button" role="tab" id="tab-soups" aria-controls="ch-soups" aria-selected="false">Soups</button>
+        <button type="button" role="tab" id="tab-chaat" aria-controls="ch-chaat" aria-selected="true">Chaat</button>
+        <button type="button" role="tab" id="tab-appetizers" aria-controls="ch-appetizers" aria-selected="false">Appetizers</button>
+        <button type="button" role="tab" id="tab-kebabs" aria-controls="ch-kebabs" aria-selected="false">Kebabs</button>
+        <button type="button" role="tab" id="tab-curries" aria-controls="ch-curries" aria-selected="false">Curries</button>
+        <button type="button" role="tab" id="tab-south" aria-controls="ch-south" aria-selected="false">South Indian</button>
+        <button type="button" role="tab" id="tab-biryani" aria-controls="ch-biryani" aria-selected="false">Biryani</button>
+        <button type="button" role="tab" id="tab-breads" aria-controls="ch-breads" aria-selected="false">Breads</button>
+        <button type="button" role="tab" id="tab-desserts" aria-controls="ch-desserts" aria-selected="false">Desserts</button>
+        <button type="button" role="tab" id="tab-thai" aria-controls="ch-thai" aria-selected="false">Thai</button>
+          <span class="seg__thumb" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="chapters">
+        <section class="chapter" id="ch-soups" role="tabpanel" aria-labelledby="tab-soups">
+          <h3 class="chapter__h">Soups</h3>
+          <ul class="dishes"><li>Badaam ka Shorba</li><li>Gulnaar Tamatar</li><li>Murgh Yakhni</li><li>Tom Kha Nariyal</li></ul>
+        </section>
+        <section class="chapter" id="ch-chaat" role="tabpanel" aria-labelledby="tab-chaat">
+          <h3 class="chapter__h">Chaat</h3>
+          <ul class="dishes">
+            <li>Chowpatty Pani Puri Shots</li><li>Malai Moti Dahi Puri</li><li>Purani Dilli Papdi Chaat</li>
+            <li>Juhu Beach Bhel</li><li>Samosa Shringar Chaat</li><li>Dilli Dil Tikki</li>
+            <li>Hass &amp; Hing Chaat</li><li>Palak Patta Chaat</li><li>Shakarkandi Chaat Salad</li>
+            <li>Rajasthani Pyaaz Ki Kachoori</li><li>Mini Raj Kachoori</li><li>Avocado Dahi Poori</li>
+            <li>Nachos Paapdi Chaat</li><li>Kamal Kakkdi Chaat</li><li>Panchmel Dal Mathri</li>
+          </ul>
+        </section>
+        <section class="chapter" id="ch-appetizers" role="tabpanel" aria-labelledby="tab-appetizers">
+          <h3 class="chapter__h">Appetizers</h3>
+          <ul class="dishes"><li>Gobhi Sixty-Five</li><li>Samosa Trio</li><li>Amritsari Machhi</li><li>Kurkure Bhindi</li><li>Kozhi Milagu Fry</li><li>Prawn Koliwada</li></ul>
+        </section>
+        <section class="chapter" id="ch-kebabs" role="tabpanel" aria-labelledby="tab-kebabs">
+          <h3 class="chapter__h">Kebabs</h3>
+          <ul class="dishes"><li>Galouti of Lamb</li><li>Kakori Seekh</li><li>Murgh Malai Tikka</li><li>Barrah Chaap</li><li>Tandoori Jhinga</li><li>Paneer Achari Tikka</li></ul>
+        </section>
+        <section class="chapter" id="ch-curries" role="tabpanel" aria-labelledby="tab-curries">
+          <h3 class="chapter__h">Curries</h3>
+          <ul class="dishes"><li>Murgh Makhani</li><li>Rogan Josh</li><li>Chicken Tikka Masala</li><li>Chicken Butter Masala</li><li>Paneer Butter Masala</li><li>Paneer Tikka Masala</li><li>Malai Kofta</li><li>Dal Makhni</li></ul>
+        </section>
+        <section class="chapter" id="ch-south" role="tabpanel" aria-labelledby="tab-south">
+          <h3 class="chapter__h">South Indian</h3>
+          <ul class="dishes"><li>Appam &amp; Ishtew</li><li>Ghee Roast Dosa</li><li>Chettinad Kozhi</li><li>Podi Idli</li><li>Uttapam of Millet</li><li>Andhra Gongura Royyala</li><li>Vada Sambhar</li></ul>
+        </section>
+        <section class="chapter" id="ch-biryani" role="tabpanel" aria-labelledby="tab-biryani">
+          <h3 class="chapter__h">Rice &amp; biryani</h3>
+          <ul class="dishes"><li>Hyderabadi Gosht</li><li>Subz Dum Biryani</li><li>Mutton Biryani</li><li>Chicken Biryani</li></ul>
+        </section>
+        <section class="chapter" id="ch-breads" role="tabpanel" aria-labelledby="tab-breads">
+          <h3 class="chapter__h">Breads</h3>
+          <ul class="dishes"><li>Lachha Paratha</li><li>Amritsari Kulcha</li><li>Phulke</li><li>Tandoori Roti</li><li>Butter Naan</li><li>Butter Garlic Naan</li></ul>
+        </section>
+        <section class="chapter" id="ch-desserts" role="tabpanel" aria-labelledby="tab-desserts">
+          <h3 class="chapter__h">Desserts</h3>
+          <ul class="dishes"><li>Shahi Tukda</li><li>Kesar Phirni</li><li>Moong Dal Halwa with pistachio sablé &amp; kunafa</li></ul>
+        </section>
+        <section class="chapter" id="ch-thai" role="tabpanel" aria-labelledby="tab-thai">
+          <h3 class="chapter__h">Thai kitchen</h3>
+          <ul class="dishes"><li>Tom Kha</li><li>Pad See Ew</li><li class="dishes__note">Full Thai menu at the table.</li></ul>
+        </section>
+      </div>
+      <p class="foot-note">Spice can be adjusted on any dish. Please tell your server about allergies.</p>
+    </div>
+  </section>
+
+  <!-- 7 · Gatherings -->
+  <section class="gather light" id="gatherings" aria-labelledby="g-title">
+    <div class="wrap">
+      <h2 class="h2" id="g-title" data-rise>Bring everyone.</h2>
+      <div class="gather__grid">
+        <article class="tile tile--black g-tile">
+          <h3 class="g-tile__h">Private dining. <span class="grad">Up to 50.</span></h3>
+          <a class="more more--dark" href="mailto:support@karvatx.com?subject=Private%20dining%20enquiry">Enquire<svg width="7" height="12" aria-hidden="true"><use href="#chev"/></svg><span class="sr"> about private dining</span></a>
+          <svg class="g-art g-art--table" viewBox="0 0 320 240" aria-hidden="true">
+            <defs><radialGradient id="g1" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F2C879" stop-opacity=".55"/><stop offset=".6" stop-color="#D9843B" stop-opacity=".12"/><stop offset="1" stop-color="#B4552D" stop-opacity="0"/></radialGradient>
+              <linearGradient id="g1t" x1="0" x2="1"><stop offset="0" stop-color="#F2C879"/><stop offset=".5" stop-color="#D9843B"/><stop offset="1" stop-color="#B4552D"/></linearGradient></defs>
+            <ellipse cx="160" cy="120" rx="150" ry="100" fill="url(#g1)"/>
+            <ellipse cx="160" cy="120" rx="96" ry="44" fill="none" stroke="url(#g1t)" stroke-width="1.5" opacity=".9"/>
+            <ellipse class="seats" cx="160" cy="120" rx="128" ry="70" fill="none" stroke="#F5F5F7" stroke-width="7" stroke-linecap="round" pathLength="50" stroke-dasharray="0 1"/>
+          </svg>
+        </article>
+        <article class="tile tile--black g-tile">
+          <h3 class="g-tile__h">Catering. <span class="grad">We come to you.</span></h3>
+          <a class="more more--dark" href="mailto:support@karvatx.com?subject=Catering%20enquiry">Enquire<svg width="7" height="12" aria-hidden="true"><use href="#chev"/></svg><span class="sr"> about catering</span></a>
+          <svg class="g-art g-art--route" viewBox="0 0 320 240" aria-hidden="true">
+            <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#F2C879"/><stop offset=".55" stop-color="#D9843B"/><stop offset="1" stop-color="#B4552D"/></linearGradient>
+              <radialGradient id="g2h" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F2C879" stop-opacity=".6"/><stop offset="1" stop-color="#D9843B" stop-opacity="0"/></radialGradient></defs>
+            <path d="M40 196 C 110 196, 90 112, 160 112 S 230 40, 276 52" fill="none" stroke="#3a3a3c" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+            <path class="route" d="M40 196 C 110 196, 90 112, 160 112 S 230 40, 276 52" fill="none" stroke="url(#g2)" stroke-width="3" stroke-linecap="round" pathLength="1"/>
+            <circle cx="40" cy="196" r="6" fill="#F5F5F7"/>
+            <circle cx="276" cy="52" r="34" fill="url(#g2h)"/>
+            <circle cx="276" cy="52" r="8" fill="#F2C879"/>
+          </svg>
+        </article>
+        <article class="tile tile--black g-tile">
+          <h3 class="g-tile__h">Birthdays <span class="grad">&amp; Diwali night.</span></h3>
+          <a class="more more--dark" href="mailto:support@karvatx.com?subject=Birthday%20or%20Diwali%20night%20enquiry">Enquire<svg width="7" height="12" aria-hidden="true"><use href="#chev"/></svg><span class="sr"> about birthdays and Diwali night</span></a>
+          <svg class="g-art g-art--lights" viewBox="0 0 320 240" aria-hidden="true">
+            <defs><radialGradient id="g3" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE7B8"/><stop offset=".18" stop-color="#F2C879" stop-opacity=".9"/><stop offset=".5" stop-color="#D9843B" stop-opacity=".25"/><stop offset="1" stop-color="#B4552D" stop-opacity="0"/></radialGradient></defs>
+            <g fill="url(#g3)">
+              <circle cx="58" cy="168" r="30"/><circle cx="112" cy="132" r="22" style="--d:.6s"/><circle cx="160" cy="176" r="36" style="--d:1.2s"/>
+              <circle cx="208" cy="124" r="20" style="--d:.3s"/><circle cx="262" cy="160" r="28" style="--d:.9s"/><circle cx="86" cy="76" r="14" style="--d:1.5s"/>
+              <circle cx="146" cy="60" r="18" style="--d:.45s"/><circle cx="236" cy="70" r="16" style="--d:1.05s"/><circle cx="290" cy="96" r="12" style="--d:.75s"/>
+              <circle cx="30" cy="104" r="12" style="--d:1.35s"/><circle cx="190" cy="34" r="10" style="--d:.15s"/>
+            </g>
+          </svg>
+        </article>
+      </div>
+      <div class="rewards">
+        <p class="rewards__t"><b>Karva Rewards.</b> Earn every time you dine.</p>
+        <p class="rewards__s">Sign up with your phone number at the table.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · Visit -->
+  <section class="visit dark" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <p class="eyebrow" data-rise>Reserve by phone</p>
+      <h2 class="visit__phone" id="visit-title" data-rise><a href="tel:+12146180078">(214) 618-0078</a></h2>
+      <p class="visit__sub" data-rise>Parties over eight, please call first.</p>
+      <div class="visit__cols">
+        <div class="vcol" data-rise>
+          <h3 class="vcol__h">Hours</h3>
+          <p>Lunch 11 am – 2 pm</p>
+          <p>Dinner 5 – 11 pm</p>
+          <p class="muted">Every day. <span id="visit-live"></span></p>
+        </div>
+        <div class="vcol" data-rise>
+          <h3 class="vcol__h">Address</h3>
+          <address>211 E Eldorado Pkwy #100<br>Little Elm, TX 75068</address>
+          <a class="more" href="https://www.google.com/maps/search/?api=1&amp;query=211+E+Eldorado+Pkwy+%23100%2C+Little+Elm%2C+TX+75068" rel="noopener" target="_blank">Get directions<svg width="7" height="12" aria-hidden="true"><use href="#chev"/></svg></a>
+        </div>
+        <div class="vcol" data-rise>
+          <h3 class="vcol__h">Good to know</h3>
+          <p>No dress code. Kids always welcome.</p>
+          <a class="more" href="mailto:support@karvatx.com">support@karvatx.com<svg width="7" height="12" aria-hidden="true"><use href="#chev"/></svg></a>
+        </div>
+      </div>
+      <div class="visit__cta" data-rise><a class="pill pill--lg" href="tel:+12146180078">Reserve a table</a></div>
+    </div>
+  </section>
+</main>
+
+<!-- 9 · Footer -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__row">
+      <p>Karva · 211 E Eldorado Pkwy #100, Little Elm, TX 75068 · <a href="tel:+12146180078">(214) 618-0078</a> · <a href="mailto:support@karvatx.com">support@karvatx.com</a></p>
+      <button class="motion-switch" type="button" data-motion-toggle hidden aria-pressed="false">
+        <span class="motion-switch__track" aria-hidden="true"><span></span></span>Motion <b data-motion-state>On</b>
+      </button>
+    </div>
+    <p>Lunch 11 am – 2 pm and dinner 5 – 11 pm, every day, Little Elm time. Reservations are taken by phone. Photography shown is placeholder. © 2026 Karva.</p>
+  </div>
+</footer>
+
+<!-- Phone action bar -->
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+12146180078"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M6.2 2.8 4.4 3.3c-.9.3-1.5 1.2-1.3 2.1.9 5.4 5.1 9.6 10.5 10.5.9.2 1.8-.4 2.1-1.3l.5-1.8c.2-.6-.1-1.2-.7-1.5l-2.3-1c-.5-.2-1.1-.1-1.5.3l-.9 1c-1.7-.8-3.1-2.2-3.9-3.9l1-.9c.4-.4.5-1 .3-1.5l-1-2.3c-.3-.6-.9-.9-1.5-.7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=211+E+Eldorado+Pkwy+%23100%2C+Little+Elm%2C+TX+75068" rel="noopener" target="_blank"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s5.5-5.2 5.5-9.6A5.5 5.5 0 0 0 4.5 8.4C4.5 12.8 10 18 10 18z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8.4" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Directions</a>
+  <a href="#menu"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5h12M4 10h12M4 15h8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Menu</a>
+  <a class="bar__cta" href="tel:+12146180078" aria-label="Reserve by phone">Reserve</a>
+</nav>
+
+</body>
+</html>
